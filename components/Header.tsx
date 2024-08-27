@@ -7,6 +7,7 @@ import { ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { SideBar } from "./SideBar";
 
 export default function Header() {
   const router = useRouter();
@@ -53,7 +54,7 @@ export default function Header() {
         <ul className="space-x-5">
           {navLinks.map((link, index) => {
             return (
-              <li key={index} className="inline-block">
+              <li key={index} className="hidden lg:inline-block">
                 <a
                   href={link.url}
                   className={cn("text-base text-foreground", {
@@ -68,9 +69,10 @@ export default function Header() {
           })}
         </ul>
       </nav>
-      <div className="flex items-center justify-center gap-x-2">
+      <div className="flex items-center justify-center gap-x-4">
         <ModeToggle />
         <ShoppingCart size={24} className="cursor-pointer" />
+        <SideBar />
       </div>
     </header>
   );

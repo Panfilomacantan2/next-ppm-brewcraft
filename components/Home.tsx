@@ -10,12 +10,15 @@ export default function Home() {
     >
       {/* <div className="absolute left-0 top-0 z-40 w-full h-40 bg-gradient-to-b from-gray-200/80 to-transparent dark:from-black" /> */}
 
-      <div className="grid grid-cols-1 place-items-center lg:grid-cols-2">
-        <div className="mt-32 flex flex-col items-center justify-center lg:mt-0">
-          <h1 className="text-4xl font-bold text-foreground/90 lg:text-6xl">
+      <div className="grid grid-cols-1 place-items-center lg:grid-cols-2 w-full">
+        <div
+          className="mt-32 flex flex-col items-center justify-center lg:mt-0"
+          data-aos="fade-right"
+        >
+          <h1 className="max-w-[640px] text-4xl sm:text-5xl font-bold text-foreground/90 md:text-6xl">
             Awaken Your Senses. Discover Coffee&apos;s True Essence.
           </h1>
-          <p className="my-5 text-lg text-foreground/80">
+          <p className="my-5 text-foreground/80 md:text-lg max-w-[640px]">
             Experience Flavor, One Perfect Cup at a Time. Elevate Your Coffee
             Moments with Rich Aromas and Bold Tastes.
           </p>
@@ -36,7 +39,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-20 h-full w-full lg:h-[620px] lg:w-[620px]">
+        <div
+          className="mt-20 h-full w-full lg:h-[620px] lg:w-[620px]"
+          data-aos="fade-left"
+        >
           <Image
             src="/assets/images/hero_img.png"
             alt="Hero"
