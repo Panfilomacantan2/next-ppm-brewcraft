@@ -19,12 +19,6 @@ import { CornerDownRight, CirclePlus, MessageCircleMore } from "lucide-react";
 
 export function SideBar() {
   const pathname = usePathname();
-  const icons = [
-    <CornerDownRight size={18} />,
-    <CirclePlus size={18} />,
-    <MessageCircleMore size={18} />,
-  ];
-
   return (
     <Sheet>
       <SheetTrigger asChild>
