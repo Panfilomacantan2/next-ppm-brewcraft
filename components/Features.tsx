@@ -12,7 +12,7 @@ export default function Features() {
         Best Selling Coffee
       </SectionHeading>
       <SectionHeading className="mt-5 text-lg text-foreground/90">
-        Discover the irresistible favorites that our coffee lovers can't get
+        Discover the irresistible favorites that our coffee lovers can&apos;t get
         enough of.
       </SectionHeading>
 

@@ -17,12 +17,14 @@ export const useCartStore = create<cartState>((set) => ({
   handleDecrementQuantity: (itemId) =>
     set((state) => ({
       cart: state.cart.map((item) =>
+        // @ts-ignore
         item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item,
       ),
     })),
     handleIncrementQuantity: (itemId) =>
     set((state) => ({
       cart: state.cart.map((item) =>
+        // @ts-ignore
         item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item,
       ),
     })),

@@ -60,10 +60,12 @@ export function CartSheet() {
                 >
                   <div className="flex items-center gap-x-2 lg:gap-x-4">
                     {/* Image of the product */}
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
                       className="h-16 w-16 object-cover"
+                      width={100}
+                      height={100}  
                     />
 
                     {/* Product details */}
@@ -105,6 +107,8 @@ export function CartSheet() {
               <p className="text-lg font-bold">
                 Total: ₱
                 {cart.reduce(
+                  // @ts-ignore
+
                   (acc, curr) => acc + curr.price * curr?.quantity,
                   0,
                 )}
