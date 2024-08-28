@@ -1,13 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import ModeToggle from "./ModeToggle";
 import { navLinks } from "@/constants";
-import { ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { SideBar } from "./SideBar";
+import { CartSheet } from "./CartSheet";
+import Link from "next/link";
 
 export default function Header() {
   const router = useRouter();
@@ -46,9 +46,9 @@ export default function Header() {
 
   return (
     <header className="fixed left-0 top-0 z-50 flex w-full items-center justify-between px-5 py-4">
-      <a href="#home" className="text-foreground">
+      <Link href="/#home" className="text-foreground">
         BrewCraft
-      </a>
+      </Link>
 
       <nav>
         <ul className="space-x-5">
@@ -71,7 +71,9 @@ export default function Header() {
       </nav>
       <div className="flex items-center justify-center gap-x-4">
         <ModeToggle />
-        <ShoppingCart size={24} className="cursor-pointer" />
+
+        <CartSheet />
+
         <SideBar />
       </div>
     </header>

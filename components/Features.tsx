@@ -18,7 +18,7 @@ export default function Features() {
 
       <AutoFitLayout>
         {bestSellerCoffee.map((coffee, index) => (
-          <CoffeeCard key={coffee.title} {...coffee} idx={index} />
+          <CoffeeCard key={coffee.id} {...coffee} idx={index} />
         ))}
       </AutoFitLayout>
     </Section>

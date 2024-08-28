@@ -38,10 +38,10 @@ export default function BlogCard({
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="p-4">
+      <div className="p-4 space-y-2">
         <h1 className="text-lg font-bold">{title}</h1>
         <p className="text-sm text-foreground">{new Date(date).toDateString()}</p>
-        <p>{description}</p>
+        <p className="text-foreground/80">{description}</p>
       </div>
     </div>
   );
