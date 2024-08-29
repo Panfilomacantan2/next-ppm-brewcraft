@@ -16,6 +16,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 
 export default function ContactPage() {
+  const onSubmit = (e: any) => e.preventDefault();
   return (
     <Section id="contact" className="flex items-center justify-center">
       <div className="w-full max-w-4xl rounded-lg py-8">
@@ -23,12 +24,12 @@ export default function ContactPage() {
           Contact Us
         </SectionHeading>
 
-        <SectionHeading className="my-8 lg:my-4 text-base text-foreground/90">
+        <SectionHeading className="my-8 text-base text-foreground/90 lg:my-4">
           We&apos;d love to hear from you! Send us a message using the form
           below.
         </SectionHeading>
 
-        <form action="!#" className="space-y-4">
+        <form className="space-y-4">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
               <Label htmlFor="name">First name</Label>
@@ -76,6 +77,7 @@ export default function ContactPage() {
             <Button
               type="submit"
               className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-yellow-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-yellow-600/90 focus:outline-none focus:ring-2 md:w-auto"
+              onClick={onSubmit}
             >
               Send Message
             </Button>

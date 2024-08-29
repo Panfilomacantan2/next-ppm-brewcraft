@@ -12,9 +12,27 @@ import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Router } from "next/router";
+import { useEffect, useState } from "react";
 
 export function SideBar() {
   const pathname = usePathname();
+
+  const [hashActive, setHashActive] = useState("#home");
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    console.log("Current hash:", hash);
+
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        setHashActive(hash);
+      }
+    }
+  }, [Router.asPath]);
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -35,23 +53,22 @@ export function SideBar() {
 
         <nav className="mt-6 flex flex-col space-y-4">
           {navLinks.map((link, idx) => {
-            const isActive = pathname === link.url;
             return (
-              <div className="flex gap-x-2" key={link.url}>
-                <Link
-                  className={cn(
-                    "flex max-w-fit text-[18px] text-foreground/80 transition-colors hover:text-foreground/100",
-                    {
-                      "text-foreground/100": isActive,
-                    },
-                  )}
-                  href={link.url}
-                >
-                  <SheetClose className="border-0 focus:border-0 focus:outline-0 active:border-0 active:outline-0">
-                    {link.name}
-                  </SheetClose>
-                </Link>
-              </div>
+              <ul className="flex gap-x-2" key={link.url}>
+                <li key={idx}>
+                  <a
+                    href={link.url}
+                    className={cn("text-base font-normal text-foreground", {
+                      "font-medium text-yellow-400": hashActive === link.url,
+                    })}
+                    onClick={() => setHashActive(link.url)}
+                  >
+                    <SheetClose className="border-0 focus:border-0 focus:outline-0 active:border-0 active:outline-0">
+                      {link.name}
+                    </SheetClose>
+                  </a>
+                </li>
+              </ul>
             );
           })}
         </nav>

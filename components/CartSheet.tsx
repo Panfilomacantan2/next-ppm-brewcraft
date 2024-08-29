@@ -53,7 +53,7 @@ export function CartSheet() {
 
         {cart.length > 0 ? (
           <div>
-            <div className="mt-6 flex h-[calc(85vh-100px)] flex-col space-y-4 overflow-y-scroll">
+            <div className="scrollbar mt-6 flex h-[calc(85vh-100px)] flex-col space-y-4 overflow-y-scroll">
               {cart.map((item, idx) => (
                 <div
                   className="flex flex-col items-center justify-between gap-x-2 border-b p-4 lg:gap-x-4"
