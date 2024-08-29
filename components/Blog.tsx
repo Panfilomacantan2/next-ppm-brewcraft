@@ -8,7 +8,7 @@ import BlogCard from "./BlogCard";
 export default function Blog() {
   return (
     <Section id="blog">
-      <SectionHeading className="font-medium">Blogs</SectionHeading>
+      <SectionHeading className="mt-10 text-3xl font-bold lg:text-5xl">Blogs</SectionHeading>
 
       <AutoFitLayout>
         {blogLists.map((blog, idx) => (

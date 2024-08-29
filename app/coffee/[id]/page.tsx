@@ -1,7 +1,7 @@
 "use client";
 
 import Section from "@/components/Section";
-import { coffeeProducts } from "@/constants";
+import { combinedCoffee } from "@/constants";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -15,7 +15,7 @@ export default function CoffeeDetails({ params }: paramsProps) {
   const [coffeeDetails, setCoffeeDetails] = useState<any>([]);
 
   useEffect(() => {
-    const coffee = coffeeProducts.find(
+    const coffee = combinedCoffee.find(
       (coffee) => coffee.id === parseInt(params.id),
     );
 
@@ -27,7 +27,7 @@ export default function CoffeeDetails({ params }: paramsProps) {
 
   return (
     <Section>
-      <h1>Page {params.id}</h1>
+      <h1 className="text-xl">{coffeeDetails.brand}</h1>
       {coffeeDetails && (
         <div className="grid grid-cols-2">
           <div>
@@ -39,8 +39,7 @@ export default function CoffeeDetails({ params }: paramsProps) {
             />
           </div>
           <div>
-            <h2>{coffeeDetails.name}</h2>
-            <p>{coffeeDetails.description}</p>
+            <p>{coffeeDetails.name}</p>
             <p>{coffeeDetails.price}</p>
           </div>
         </div>

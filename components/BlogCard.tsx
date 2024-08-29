@@ -25,7 +25,7 @@ export default function BlogCard({
 }: BlogCardProps) {
   return (
     <div
-      className="max-h-96 overflow-hidden rounded-sm border shadow-sm hover:shadow-lg"
+      className="max-h-96 w-full overflow-hidden rounded-sm border shadow-sm hover:shadow-lg"
       data-aos="fade-up"
       data-aos-duration={200 * (idx + 1)}
     >

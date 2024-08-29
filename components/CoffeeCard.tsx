@@ -47,7 +47,7 @@ export default function CoffeeCard({
       <div
         className="relative min-h-96 border shadow-sm hover:shadow-lg rounded-sm overflow-hidden"
         data-aos="fade-left"
-        data-aos-duration={200 * (idx + 1)}
+        data-aos-duration={50 * (idx + 1)}
       >
         <div className="h-40 w-full overflow-hidden border-b border-border bg-white py-2">
           <Image

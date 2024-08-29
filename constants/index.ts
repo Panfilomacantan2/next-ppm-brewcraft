@@ -440,3 +440,10 @@ export const coffeeProducts = [
       "Perfect for those new to coffee or sensitive to acidity, offering a smooth taste with reduced stomach irritation.",
   },
 ];
+
+export const combinedCoffee = coffeeProducts.map((coffee, idx) => {
+  return { 
+    ...coffee, 
+    image: bestSellerCoffee[idx]?.image
+  };
+});

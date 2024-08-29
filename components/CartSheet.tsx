@@ -35,7 +35,7 @@ export function CartSheet() {
       <SheetTrigger asChild>
         <div className="relative cursor-pointer">
           <ShoppingCart size={24} className="cursor-pointer" />
-          <span className="absolute -right-2 -top-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-medium leading-none text-white">
+          <span className="absolute -right-2 -top-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-yellow-500 text-xs font-medium leading-none text-white">
             {cart.length}
           </span>
         </div>
