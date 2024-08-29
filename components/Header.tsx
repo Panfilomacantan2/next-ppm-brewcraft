@@ -29,7 +29,6 @@ export default function Header() {
   useEffect(() => {
     // if the scroll up is greater than 50px then add background color to header
     const header = document.querySelector("header");
-    const nav = document.querySelector("nav ul");
     const scrollUp = () => {
       if (document.documentElement.scrollTop > 20) {
         header?.classList.add("bg-background", "shadow-md");

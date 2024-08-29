@@ -25,7 +25,7 @@ export default function BlogCard({
 }: BlogCardProps) {
   return (
     <div
-      className="max-h-96 border shadow-sm hover:shadow-lg"
+      className="max-h-96 overflow-hidden rounded-sm border shadow-sm hover:shadow-lg"
       data-aos="fade-up"
       data-aos-duration={200 * (idx + 1)}
     >
@@ -38,9 +38,11 @@ export default function BlogCard({
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="p-4 space-y-2">
+      <div className="space-y-2 p-4">
         <h1 className="text-lg font-bold">{title}</h1>
-        <p className="text-sm text-foreground">{new Date(date).toDateString()}</p>
+        <p className="text-sm text-foreground">
+          {new Date(date).toDateString()}
+        </p>
         <p className="text-foreground/80">{description}</p>
       </div>
     </div>

@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 export default function Contact() {
   return (
     <Section id="contact">
-      <SectionHeading className="font-medium">Contact</SectionHeading>
+      <SectionHeading className="font-medium px-3">Contact</SectionHeading>
     </Section>
   );
 }

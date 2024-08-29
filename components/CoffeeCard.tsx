@@ -45,7 +45,7 @@ export default function CoffeeCard({
     // !TODO: add global state zustand or Context API
     <Link href={`/coffee/${id}`}>
       <div
-        className="relative max-h-96 border shadow-sm hover:shadow-lg"
+        className="relative min-h-96 border shadow-sm hover:shadow-lg rounded-sm overflow-hidden"
         data-aos="fade-left"
         data-aos-duration={200 * (idx + 1)}
       >

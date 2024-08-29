@@ -12,12 +12,13 @@ import {
 } from "@/components/ui/sheet";
 import { navLinks } from "@/constants";
 import { cn } from "@/lib/utils";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Trash, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCartStore } from "@/store/Cart";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import TooltipButton from "./ToolTip";
 
 export function CartSheet() {
   const {
@@ -55,50 +56,55 @@ export function CartSheet() {
             <div className="mt-6 flex h-[calc(85vh-100px)] flex-col space-y-4 overflow-y-scroll">
               {cart.map((item, idx) => (
                 <div
-                  className="flex items-center justify-between gap-x-2 border-b p-4 lg:gap-x-4"
+                  className="flex flex-col items-center justify-between gap-x-2 border-b p-4 lg:gap-x-4"
                   key={item.id}
                 >
-                  <div className="flex items-center gap-x-2 lg:gap-x-4">
-                    {/* Image of the product */}
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      className="h-16 w-16 object-cover"
-                      width={100}
-                      height={100}  
-                    />
+                  <div className="flex w-full items-center gap-x-2 lg:gap-x-4">
+                    <div className="flex w-full gap-x-2">
+                      {/* Image of the product */}
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        className="h-12 w-12 rounded-sm object-cover md:h-16 md:w-16"
+                        width={100}
+                        height={100}
+                      />
 
-                    {/* Product details */}
-                    <div>
-                      <h3 className="text-md font-medium">{item.title}</h3>
-                      <p className="text-sm text-gray-500">₱{item.price}</p>
+                      {/* Product details */}
+                      <div>
+                        <h3 className="text-md font-medium">{item.title}</h3>
+                        <p className="text-sm text-foreground/80">
+                          ₱{item.price}
+                        </p>
+                      </div>
                     </div>
+
+                    {/* Delete button */}
+                    <TooltipButton
+                      buttonText={<Trash2 />}
+                      toolTip="Remove"
+                      onClick={() => removeFromCart(item.id)}
+                    />
                   </div>
 
                   {/* Quantity controls */}
                   <div className="flex items-center gap-x-2">
-                    <button
+                    <Button
+                      size="icon"
                       onClick={() => handleDecrementQuantity(item.id)}
-                      className="rounded bg-background px-2 py-1 hover:bg-background"
+                      // @ts-ignore
+                      disabled={item?.quantity < 1}
                     >
                       -
-                    </button>
+                    </Button>
                     <span className="text-md font-medium">{item.quantity}</span>
-                    <button
+                    <Button
+                      size="icon"
                       onClick={() => handleIncrementQuantity(item.id)}
-                      className="rounded bg-background px-2 py-1 hover:bg-background"
                     >
                       +
-                    </button>
+                    </Button>
                   </div>
-
-                  {/* Delete button */}
-                  <button
-                    onClick={() => removeFromCart(item.id)}
-                    className="rounded bg-red-500 px-2 py-1 text-white hover:bg-red-600"
-                  >
-                    Remove
-                  </button>
                 </div>
               ))}
             </div>

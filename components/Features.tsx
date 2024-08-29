@@ -12,14 +12,16 @@ export default function Features() {
         Best Selling Coffee
       </SectionHeading>
       <SectionHeading className="mt-5 text-lg text-foreground/90">
-        Discover the irresistible favorites that our coffee lovers can&apos;t get
-        enough of.
+        Discover the irresistible favorites that our coffee lovers can&apos;t
+        get enough of.
       </SectionHeading>
 
       <AutoFitLayout>
-        {bestSellerCoffee.map((coffee, index) => (
-          <CoffeeCard key={coffee.id} {...coffee} idx={index} />
-        ))}
+        {bestSellerCoffee
+          .filter((coffee) => coffee.rating === 5)
+          .map((coffee, index) => (
+            <CoffeeCard key={coffee.id} {...coffee} idx={index} />
+          ))}
       </AutoFitLayout>
     </Section>
   );
