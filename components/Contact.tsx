@@ -18,16 +18,17 @@ import { Textarea } from "./ui/textarea";
 export default function ContactPage() {
   return (
     <Section id="contact" className="flex items-center justify-center">
-      <div className="w-full max-w-4xl rounded-lg py-8 shadow-lg">
+      <div className="w-full max-w-4xl rounded-lg py-8">
         <SectionHeading className="mt-10 text-3xl font-bold lg:text-5xl">
           Contact Us
         </SectionHeading>
-        <p className="my-4 mb-8 text-center text-foreground/90">
+
+        <SectionHeading className="my-8 lg:my-4 text-base text-foreground/90">
           We&apos;d love to hear from you! Send us a message using the form
           below.
-        </p>
+        </SectionHeading>
 
-        <form className="space-y-4">
+        <form action="!#" className="space-y-4">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
               <Label htmlFor="name">First name</Label>
@@ -74,7 +75,7 @@ export default function ContactPage() {
           <div className="flex justify-center">
             <Button
               type="submit"
-              className="inline-flex w-full items-center justify-center rounded-md border border-transparent px-6 py-3 text-base font-medium shadow-sm focus:outline-none focus:ring-2 md:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-yellow-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-yellow-600/90 focus:outline-none focus:ring-2 md:w-auto"
             >
               Send Message
             </Button>

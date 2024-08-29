@@ -44,7 +44,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed left-0 top-0 z-50 flex w-full items-center justify-between px-5 py-4">
+    <header className="fixed left-0 top-0 z-50 flex w-full items-center justify-between px-5 md:px-12 py-4">
       <Link href="/#home" className="text-foreground">
         BrewCraft
       </Link>
@@ -68,7 +68,7 @@ export default function Header() {
           })}
         </ul>
       </nav>
-      <div className="flex items-center justify-center gap-x-4">
+      <div className="flex items-center justify-center gap-x-6">
         <ModeToggle />
 
         <CartSheet />

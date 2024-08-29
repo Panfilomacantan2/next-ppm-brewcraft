@@ -4,18 +4,14 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { navLinks } from "@/constants";
 import { cn } from "@/lib/utils";
-import { LogOut, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CornerDownRight, CirclePlus, MessageCircleMore } from "lucide-react";
 
 export function SideBar() {
   const pathname = usePathname();
@@ -23,7 +19,7 @@ export function SideBar() {
     <Sheet>
       <SheetTrigger asChild>
         <div className="cursor-pointer lg:hidden">
-          <Menu />
+          <Menu size={28} />
         </div>
       </SheetTrigger>
       <SheetContent side={"left"}>
@@ -44,7 +40,7 @@ export function SideBar() {
               <div className="flex gap-x-2" key={link.url}>
                 <Link
                   className={cn(
-                    "flex max-w-fit text-[16px] font-medium text-foreground/80 transition-colors hover:text-foreground/100",
+                    "flex max-w-fit text-[18px] text-foreground/80 transition-colors hover:text-foreground/100",
                     {
                       "text-foreground/100": isActive,
                     },

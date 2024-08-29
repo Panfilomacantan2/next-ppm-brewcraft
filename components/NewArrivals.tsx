@@ -11,7 +11,7 @@ export default function NewArrivals() {
       <SectionHeading className="mt-10 text-3xl font-bold lg:text-5xl">
         Explore Our Coffee
       </SectionHeading>
-      <SectionHeading className="mt-5 text-lg text-foreground/90">
+      <SectionHeading className="my-8 text-base text-foreground/90 lg:my-4">
         Experience the rich aromas and bold flavors that awaken your senses with
         every sip.
       </SectionHeading>
