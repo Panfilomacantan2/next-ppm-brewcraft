@@ -28,6 +28,7 @@ export default function CoffeeCard({
     id: number,
   ) => {
     e.stopPropagation();
+    e.preventDefault();
 
     const getCoffee = bestSellerCoffee.find((coffee) => coffee.id === id);
 

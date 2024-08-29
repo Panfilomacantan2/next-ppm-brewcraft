@@ -22,7 +22,8 @@ export default function CoffeeDetails({ params }: paramsProps) {
     if (!coffee) return;
 
     setCoffeeDetails(coffee);
-  }, [params.id]);
+    // @ts-ignore
+  }, []);
 
   return (
     <Section>
