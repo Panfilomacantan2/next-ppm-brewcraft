@@ -11,12 +11,10 @@ import { navLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Router } from "next/router";
 import { useEffect, useState } from "react";
 
 export function SideBar() {
-  const pathname = usePathname();
 
   const [hashActive, setHashActive] = useState("#home");
 
