@@ -11,25 +11,39 @@ import { navLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 import Link from "next/link";
-import { Router } from "next/router";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export function SideBar() {
-
-  const [hashActive, setHashActive] = useState("#home");
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [hashActive, setHashActive] = useState<string | null>("#home");
 
   useEffect(() => {
-    const hash = window.location.hash;
-    console.log("Current hash:", hash);
+    if (typeof window === "undefined") return;
+
+    const hash = searchParams.get(window.location.hash);
 
     if (hash) {
-      const element = document.querySelector(hash);
+      console.log(hash);
+      const element = document.getElementById(hash);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
-        setHashActive(hash);
+        setHashActive(`#${hash}`);
       }
     }
-  }, [Router.asPath]);
+  }, [pathname, searchParams]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    if (hashActive) {
+      const element = document.querySelector(hashActive);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hashActive]);
 
   return (
     <Sheet>
@@ -38,7 +52,7 @@ export function SideBar() {
           <Menu size={28} />
         </div>
       </SheetTrigger>
-      <SheetContent side={"left"}>
+      <SheetContent side={"left"} className="p-6 pr-0">
         <SheetHeader>
           <Link
             className="mr-auto flex items-center gap-2 text-lg font-semibold"

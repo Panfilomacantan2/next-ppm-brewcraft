@@ -3,28 +3,40 @@
 import ModeToggle from "./ModeToggle";
 import { navLinks } from "@/constants";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { SideBar } from "./SideBar";
 import { CartSheet } from "./CartSheet";
 import Link from "next/link";
 
 export default function Header() {
-  const router = useRouter();
-  const [hashActive, setHashActive] = useState("#home");
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [hashActive, setHashActive] = useState<string | null>("#home");
 
   useEffect(() => {
-    const hash = window.location.hash;
-    console.log("Current hash:", hash);
+    if (typeof window === "undefined") return;
 
+    const hash = searchParams.get(window.location.hash);
     if (hash) {
-      const element = document.querySelector(hash);
+      const element = document.getElementById(hash);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
-        setHashActive(hash);
+        setHashActive(`#${hash}`);
       }
     }
-  }, [router.refresh]);
+  }, [pathname, searchParams, hashActive]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    if (hashActive) {
+      const element = document.querySelector(hashActive);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hashActive]);
 
   useEffect(() => {
     // if the scroll up is greater than 50px then add background color to header
@@ -44,7 +56,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed left-0 top-0 z-50 flex w-full items-center justify-between px-5 md:px-12 py-4">
+    <header className="fixed left-0 top-0 z-50 flex w-full items-center justify-between px-5 py-4 md:px-12">
       <Link href="/#home" className="text-foreground">
         BrewCraft
       </Link>
