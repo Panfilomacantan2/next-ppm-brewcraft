@@ -1,21 +1,33 @@
+"use client";
+
 import DialogCard from "./CoffeeDialog";
-import { CoffeeCardProps } from "@/types";
+import { Coffee, CoffeeCardProps } from "@/types";
 import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { useCartStore } from "@/store/Cart";
 import StarRating from "./StarRating";
+import { coffeeProducts } from "@/constants";
 
 export default function CoffeeCard({
   id,
-  title,
-  description,
-  rating,
+  name,
+  brand,
   price,
+  pros,
+  cons,
+  overview,
+  keyIngredients,
+  effectiveness,
   image,
+  rating,
   idx,
-}: CoffeeCardProps) {
-  const { addToCart, cart } = useCartStore((state) => state);
+}: Coffee & {
+  idx: number;
+}) {
+  const { addToCart, cart, handleGetCoffee } = useCartStore(
+    (state) => state,
+  );
 
   const handleAddToCart = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -24,30 +36,40 @@ export default function CoffeeCard({
     e.stopPropagation();
     e.preventDefault();
 
-    const isItemInCart = cart.some((item) => item.id === id);
+    const coffee = coffeeProducts.find(coffee => coffee.id === id)
+
+    const isItemInCart = cart.find((item) => item.id === id);
     if (isItemInCart) return;
 
-    addToCart({ id, title, description, rating, price, image, quantity: 1 });
+    addToCart({ ...coffee, quantity: 1 });
   };
 
   return (
     <DialogCard
-      id={id}
-      title={title}
-      description={description}
-      rating={rating}
-      price={price}
-      image={image}
+      selectedCoffee={{
+        id,
+        name,
+        brand,
+        price,
+        pros,
+        cons,
+        overview,
+        keyIngredients,
+        effectiveness,
+        image,
+        rating,
+      }}
       triggerComponent={
         <div
-          className="relative min-h-96 overflow-hidden rounded-sm border shadow-sm hover:shadow-lg"
+          onClick={() => handleGetCoffee(id)}
+          className="relative max-h-96 overflow-hidden rounded-sm border shadow-sm hover:shadow-lg cursor-pointer"
           data-aos="fade-left"
           data-aos-duration={50 * (idx + 1)}
         >
           <div className="h-40 w-full overflow-hidden border-b border-border bg-white py-2">
             <Image
               src={image}
-              alt={title}
+              alt={brand}
               width={300}
               height={200}
               className="h-full w-full object-contain"
@@ -58,8 +80,8 @@ export default function CoffeeCard({
             <div>
               <StarRating rating={rating} />
             </div>
-            <h1 className="text-lg font-bold">{title}</h1>
-            <p className="text-sm">{description}</p>
+            <h1 className="text-lg font-bold">{brand}</h1>
+            <p className="text-sm">{name}</p>
           </div>
 
           <div className="absolute bottom-4 flex w-full items-center justify-between px-5">

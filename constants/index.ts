@@ -4,145 +4,20 @@ export const navLinks = [
     url: "#home",
   },
   {
-    name: "New Arrivals",
-    url: "#new-arrivals",
+    name: "Explore Now",
+    url: "#explore-now",
   },
   {
-    name: "Features",
-    url: "#features",
-  },
-  {
-    name: "Contact",
-    url: "#contact",
+    name: "Best Seller",
+    url: "#best-seller",
   },
   {
     name: "Blog",
     url: "#blog",
   },
-];
-
-// best seller coffee with rating and price and description
-export const bestSellerCoffee = [
   {
-    id: 1,
-    title: "Tim Hortons",
-    description:
-      "Tim Hortons Premium Light Roast Instant Coffee productnation.",
-    rating: 3,
-    price: 440.0,
-    image: "/assets/images/coffee/tim_hortons.jpeg",
-  },
-  {
-    id: 2,
-    title: "Nescafe",
-    description: "Nescafe Original 3-in1 Instant Coffee.",
-    rating: 5,
-    price: 227.0,
-    image: "/assets/images/coffee/nescafe.jpeg",
-  },
-  {
-    id: 3,
-    title: "Folgers",
-    description: "Folgers Classic Roast Instant Coffee.",
-    rating: 2,
-    price: 799.0,
-    image: "/assets/images/coffee/folgers.jpeg",
-  },
-  {
-    id: 4,
-    title: "Nescafe",
-    description: "Nescafe Classic Decaf Instant Coffee.",
-    rating: 4,
-    price: 90.0,
-    image: "/assets/images/coffee/nescafe_decaf.jpeg",
-  },
-  {
-    id: 5,
-    title: "Member’s Mark",
-    description: "Member's Mark Colombian Freeze Dried Instant Coffee.",
-    rating: 3.5,
-    price: 90.0,
-    image: "/assets/images/coffee/members_mark.jpeg",
-  },
-  {
-    id: 6,
-    title: "Nescafe",
-    description: "Nescafe Gold Instant Coffee.",
-    rating: 3.5,
-    price: 340.0,
-    image: "/assets/images/coffee/nescafe_gold.jpeg",
-  },
-  {
-    id: 7,
-    title: "Moccona Espresso Coffee",
-    description: "Moccona Espresso Coffee.",
-    rating: 5,
-    price: 338.0,
-    image: "/assets/images/coffee/moccona.jpeg",
-  },
-  {
-    id: 8,
-    title: "Brilliant",
-    description: "Brilliant Dark Detox Coffee.",
-    rating: 3.5,
-    price: 259.0,
-    image: "/assets/images/coffee/brilliant.jpeg",
-  },
-  {
-    id: 9,
-    title: "Cafe Puro",
-    description: "CAFE PURO Jade Blend Ground Coffee.",
-    rating: 3.5,
-    price: 305.0,
-    image: "/assets/images/coffee/cafe_puro.jpeg",
-  },
-  {
-    id: 10,
-    title: "Nescafe Classico Dark Roast",
-    description: "Nescafe Clasico Dark Roast.",
-    rating: 3.5,
-    price: 606.0,
-    image: "/assets/images/coffee/dark_roast.jpeg",
-  },
-  {
-    id: 11,
-    title: "Blend 45",
-    description: "Blend 45 Instant Coffee.",
-    rating: 5,
-    price: 84.0,
-    image: "/assets/images/coffee/blend_45.jpeg",
-  },
-  {
-    id: 12,
-    title: "Slimming Coffee",
-    description: "Ketofit Slimming Coffee.",
-    rating: 3.5,
-    price: 350.0,
-    image: "/assets/images/coffee/ketofit.jpeg",
-  },
-  {
-    id: 13,
-    title: "CULTURE BLENDS",
-    description: "CULTURE BLENDS Italian Creamy White Instant Coffee.",
-    rating: 3.5,
-    price: 70.0,
-    image: "/assets/images/coffee/culture_blends.jpeg",
-  },
-  {
-    id: 14,
-    title: "San Mig",
-    description: "San Mig Super Coffee Orig Sugar-Free Instant Coffee.",
-    rating: 3.5,
-    price: 122.0,
-    image: "/assets/images/coffee/san_mig.jpeg",
-  },
-  {
-    id: 15,
-    title: "Kopiko",
-    description: "Kopiko L.A Instant Coffee.",
-    rating: 5,
-    price: 65.0,
-    image: "/assets/images/coffee/kopiko.jpeg",
+    name: "Contact",
+    url: "#contact",
   },
 ];
 
@@ -182,7 +57,9 @@ export const coffeeProducts = [
     id: 1,
     name: "Tim Hortons Premium Light Roast Instant Coffee",
     brand: "Tim Hortons",
-    price: "₱440.00",
+    rating: 3,
+    price: 440.0,
+    image: "/assets/images/coffee/tim_hortons.jpeg",
     shopLinks: {
       lazada: "Lazada Philippines",
       shopee: "Shopee Philippines",
@@ -203,7 +80,9 @@ export const coffeeProducts = [
     id: 2,
     name: "Nescafe Original 3-in-1 Instant Coffee",
     brand: "Nescafe",
-    price: "₱227.00",
+    rating: 5,
+    price: 227.0,
+    image: "/assets/images/coffee/nescafe.jpeg",
     shopLinks: {
       lazada: "Lazada Philippines",
       shopee: "Shopee Philippines",
@@ -220,7 +99,9 @@ export const coffeeProducts = [
     id: 3,
     name: "Folgers Classic Roast Instant Coffee",
     brand: "Folgers",
-    price: "₱799.00",
+    rating: 2,
+    price: 799.0,
+    image: "/assets/images/coffee/folgers.jpeg",
     shopLinks: {
       lazada: "Lazada Philippines",
       shopee: "Shopee Philippines",
@@ -241,7 +122,10 @@ export const coffeeProducts = [
     id: 4,
     name: "Nescafe Classic Decaf Instant Coffee",
     brand: "Nescafe",
-    price: "₱90.00",
+    rating: 4,
+    price: 90.0,
+    image: "/assets/images/coffee/nescafe_decaf.jpeg",
+
     shopLinks: {
       lazada: "Lazada Philippines",
       shopee: "Shopee Philippines",
@@ -262,7 +146,9 @@ export const coffeeProducts = [
     id: 5,
     name: "Member's Mark Colombian Freeze Dried Instant Coffee",
     brand: "Member’s Mark",
-    price: "₱939.00",
+    rating: 3.5,
+    price: 90.0,
+    image: "/assets/images/coffee/members_mark.jpeg",
     shopLinks: {
       lazada: "Lazada Philippines",
       shopee: "Shopee Philippines",
@@ -283,7 +169,9 @@ export const coffeeProducts = [
     id: 6,
     name: "Nescafe Gold Instant Coffee",
     brand: "Nescafe",
-    price: "₱340.00",
+    rating: 3.5,
+    price: 340.0,
+    image: "/assets/images/coffee/nescafe_gold.jpeg",
     shopLinks: {
       lazada: "Lazada Philippines",
       shopee: "Shopee Philippines",
@@ -304,7 +192,9 @@ export const coffeeProducts = [
     id: 7,
     name: "Moccona Espresso Coffee",
     brand: "Moccona",
-    price: "₱338.00",
+    rating: 5,
+    price: 338.0,
+    image: "/assets/images/coffee/moccona.jpeg",
     shopLinks: {
       lazada: "Lazada Philippines",
       shopee: "Shopee Philippines",
@@ -325,7 +215,9 @@ export const coffeeProducts = [
     id: 8,
     name: "Brilliant Dark Detox Coffee",
     brand: "Brilliant",
-    price: "₱259.00",
+    rating: 3.5,
+    price: 259.0,
+    image: "/assets/images/coffee/brilliant.jpeg",
     pros: [
       "Coffee and Slimming drink into one",
       "Made with natural detoxifying ingredients",
@@ -344,7 +236,9 @@ export const coffeeProducts = [
     id: 9,
     name: "CAFE PURO Jade Blend Ground Coffee",
     brand: "Cafe Puro",
-    price: "₱305.00",
+    rating: 3.5,
+    price: 305.0,
+    image: "/assets/images/coffee/cafe_puro.jpeg",
     pros: [
       "Made with 100% natural ingredients",
       "Blended with Arabica and Robusta beans",
@@ -361,7 +255,9 @@ export const coffeeProducts = [
     id: 10,
     name: "Nescafe Clasico Dark Roast",
     brand: "Nescafe Classico",
-    price: "₱606.00",
+    rating: 3.5,
+    price: 606.0,
+    image: "/assets/images/coffee/dark_roast.jpeg",
     pros: ["Gluten-free", "Instant", "Fully roasted"],
     cons: ["Some may not like the bold and intense flavors"],
     overview:
@@ -374,7 +270,9 @@ export const coffeeProducts = [
     id: 11,
     name: "Blend 45 Instant Coffee",
     brand: "Blend 45",
-    price: "₱84.00",
+    rating: 5,
+    price: 84.0,
+    image: "/assets/images/coffee/blend_45.jpeg",
     pros: ["Trans-fat free", "Cheapest coffee", "Smells good"],
     cons: ["Contains sulfites"],
     overview:
@@ -387,7 +285,9 @@ export const coffeeProducts = [
     id: 12,
     name: "Ketofit Slimming Coffee",
     brand: "Slimming Coffee",
-    price: "₱350.00",
+    rating: 3.5,
+    price: 350.0,
+    image: "/assets/images/coffee/ketofit.jpeg",
     pros: ["No side effects", "Organic", "Low-carb coffee"],
     cons: ["Not recommended for pregnant and lactating women"],
     overview:
@@ -400,7 +300,9 @@ export const coffeeProducts = [
     id: 13,
     name: "CULTURE BLENDS Italian Creamy White Instant Coffee",
     brand: "CULTURE BLENDS",
-    price: "₱70.00",
+    rating: 3.5,
+    price: 70.0,
+    image: "/assets/images/coffee/culture_blends.jpeg",
     pros: ["Full of creaminess", "3-in-1 coffee", "Balanced coffee"],
     cons: ["Some may not like the overwhelming taste of cream"],
     overview:
@@ -413,7 +315,9 @@ export const coffeeProducts = [
     id: 14,
     name: "San Mig Super Coffee Orig Sugar-Free Instant Coffee",
     brand: "San Mig",
-    price: "₱122.00",
+    rating: 3.5,
+    price: 122.0,
+    image: "/assets/images/coffee/san_mig.jpeg",
     pros: ["Sugar-free", "Low in fat", "Fewer calories"],
     cons: ["Some may not like the coffee flavor without sweetness"],
     overview:
@@ -426,7 +330,9 @@ export const coffeeProducts = [
     id: 15,
     name: "Kopiko L.A Instant Coffee",
     brand: "Kopiko",
-    price: "₱65.00",
+    rating: 5,
+    price: 65.0,
+    image: "/assets/images/coffee/kopiko.jpeg",
     pros: [
       "Low acid",
       "Made with selected, high-grade coffee beans",
@@ -440,10 +346,3 @@ export const coffeeProducts = [
       "Perfect for those new to coffee or sensitive to acidity, offering a smooth taste with reduced stomach irritation.",
   },
 ];
-
-export const combinedCoffee = coffeeProducts.map((coffee, idx) => {
-  return { 
-    ...coffee, 
-    image: bestSellerCoffee[idx]?.image
-  };
-});

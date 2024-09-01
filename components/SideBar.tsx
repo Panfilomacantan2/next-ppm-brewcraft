@@ -17,26 +17,26 @@ import { useEffect, useState } from "react";
 export function SideBar() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [hashActive, setHashActive] = useState<string | null>("#home");
-
+  const [hashActive, setHashActive] = useState<string | null>(null);
+  
   useEffect(() => {
     if (typeof window === "undefined") return;
-
-    const hash = searchParams.get(window.location.hash);
-
+  
+    const hash = window.location.hash;
+  
     if (hash) {
       console.log(hash);
-      const element = document.getElementById(hash);
+      const element = document.getElementById(hash.substring(1)); // Remove the '#' from the hash
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
-        setHashActive(`#${hash}`);
+        setHashActive(hash); // Store the full hash including '#'
       }
     }
-  }, [pathname, searchParams]);
-
+  }, [pathname]);
+  
   useEffect(() => {
     if (typeof window === "undefined") return;
-
+  
     if (hashActive) {
       const element = document.querySelector(hashActive);
       if (element) {
@@ -44,6 +44,7 @@ export function SideBar() {
       }
     }
   }, [hashActive]);
+  
 
   return (
     <Sheet>

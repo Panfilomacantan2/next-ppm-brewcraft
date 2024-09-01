@@ -10,11 +10,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { navLinks } from "@/constants";
 import { cn } from "@/lib/utils";
-import { ShoppingCart, Trash, Trash2 } from "lucide-react";
+import { ShoppingCart,  Trash2 } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useCartStore } from "@/store/Cart";
 import { Button } from "./ui/button";
 import Image from "next/image";
@@ -64,7 +62,7 @@ export function CartSheet() {
                       {/* Image of the product */}
                       <Image
                         src={item.image}
-                        alt={item.title}
+                        alt={item.brand}
                         className="h-12 w-12 rounded-sm object-cover md:h-16 md:w-16"
                         width={100}
                         height={100}
@@ -72,7 +70,7 @@ export function CartSheet() {
 
                       {/* Product details */}
                       <div>
-                        <h3 className="text-md font-medium">{item.title}</h3>
+                        <h3 className="text-md font-medium">{item.brand}</h3>
                         <p className="text-sm text-foreground/80">
                           ₱{item.price}
                         </p>
@@ -96,8 +94,13 @@ export function CartSheet() {
                       disabled={item?.quantity < 1}
                     >
                       -
+                     
                     </Button>
-                    <span className="text-md font-medium">{item.quantity}</span>
+                    
+                    <span className="text-md font-medium">
+                    
+                      {item.quantity}
+                      </span>
                     <Button
                       size="icon"
                       onClick={() => handleIncrementQuantity(item.id)}

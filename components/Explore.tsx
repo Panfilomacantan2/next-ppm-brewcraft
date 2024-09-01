@@ -1,13 +1,13 @@
 import React from "react";
 import Section from "./Section";
 import SectionHeading from "./SectionHeading";
-import { bestSellerCoffee } from "@/constants";
+import { coffeeProducts } from "@/constants";
 import CoffeeCard from "./CoffeeCard";
 import AutoFitLayout from "./AutoFitLayout";
 
 export default function NewArrivals() {
   return (
-    <Section id="new-arrivals">
+    <Section id="explore-now">
       <SectionHeading className="mt-10 text-3xl font-bold lg:text-5xl">
         Explore Our Coffee
       </SectionHeading>
@@ -17,7 +17,7 @@ export default function NewArrivals() {
       </SectionHeading>
 
       <AutoFitLayout>
-        {bestSellerCoffee.map((coffee, index) => (
+        {coffeeProducts.map((coffee, index) => (
           <CoffeeCard key={coffee.id} {...coffee} idx={index} />
         ))}
       </AutoFitLayout>

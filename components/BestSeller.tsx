@@ -1,13 +1,13 @@
 import React from "react";
 import Section from "./Section";
 import SectionHeading from "./SectionHeading";
-import { bestSellerCoffee } from "@/constants";
+import { coffeeProducts } from "@/constants";
 import AutoFitLayout from "./AutoFitLayout";
 import CoffeeCard from "./CoffeeCard";
 
 export default function Features() {
   return (
-    <Section id="features">
+    <Section id="best-seller">
       <SectionHeading className="mt-10 text-3xl font-bold lg:text-5xl">
         Best Selling Coffee
       </SectionHeading>
@@ -17,7 +17,7 @@ export default function Features() {
       </SectionHeading>
 
       <AutoFitLayout>
-        {bestSellerCoffee
+        {coffeeProducts
           .filter((coffee) => coffee.rating === 5)
           .map((coffee, index) => (
             <CoffeeCard key={coffee.id} {...coffee} idx={index} />
