@@ -16,7 +16,6 @@ import { useEffect, useState } from "react";
 
 export function SideBar() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [hashActive, setHashActive] = useState<string | null>(null);
   
   useEffect(() => {
