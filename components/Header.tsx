@@ -11,7 +11,6 @@ import Link from "next/link";
 
 export default function Header() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [hashActive, setHashActive] = useState<string | null>(null);
 
   useEffect(() => {
