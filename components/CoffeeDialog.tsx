@@ -40,7 +40,7 @@ export default function DialogCard({
   return (
     <Dialog>
       <DialogTrigger asChild>{triggerComponent}</DialogTrigger>
-      <DialogContent className="w-[95%] rounded-md sm:max-w-[60%]">
+      <DialogContent className="min-h-96 w-[95%] rounded-md sm:max-w-[60%]">
         <div className="relative flex flex-col gap-5 lg:flex-row">
           <div className="w-full bg-white rounded-sm">
             <div className="relative mx-auto h-48 w-48 flex-shrink-0 bg-white lg:h-72 lg:w-72">

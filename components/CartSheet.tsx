@@ -11,7 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { ShoppingCart,  Trash2 } from "lucide-react";
+import { ShoppingCart, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { useCartStore } from "@/store/Cart";
 import { Button } from "./ui/button";
@@ -33,9 +33,11 @@ export function CartSheet() {
       <SheetTrigger asChild>
         <div className="relative cursor-pointer">
           <ShoppingCart size={24} className="cursor-pointer" />
-          <span className="absolute -right-2 -top-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-yellow-500 text-xs font-medium leading-none text-white">
-            {cart.length}
-          </span>
+          {cart.length > 0 && (
+            <span className="absolute -right-2 -top-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-yellow-500 text-xs font-medium leading-none text-white">
+              {cart.length}
+            </span>
+          )}
         </div>
       </SheetTrigger>
       <SheetContent side={"right"}>
@@ -94,13 +96,9 @@ export function CartSheet() {
                       disabled={item?.quantity < 1}
                     >
                       -
-                     
                     </Button>
-                    
-                    <span className="text-md font-medium">
-                    
-                      {item.quantity}
-                      </span>
+
+                    <span className="text-md font-medium">{item.quantity}</span>
                     <Button
                       size="icon"
                       onClick={() => handleIncrementQuantity(item.id)}
