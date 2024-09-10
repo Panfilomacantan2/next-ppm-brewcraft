@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="w-full">
           <p className="text-center border-t border-border py-5 text-sm text-gray-500">
-            © Copyright {new Date().getFullYear()} BrewCraft. All Rights
+            © Copyright {new Date().getFullYear()} <span className="text-yellow-500">BrewCraft</span>. All Rights
             Reserved.
           </p>
         </div>

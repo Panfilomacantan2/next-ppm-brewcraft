@@ -30,7 +30,7 @@ export default function Home() {
               Contact Us
             </a>
             <a
-              href="#new-arrivals"
+              href="#explore-now"
               className="inline-block rounded-md bg-yellow-600 px-6 py-3 text-lg font-medium text-white hover:bg-yellow-600/90"
             >
               Shop Now

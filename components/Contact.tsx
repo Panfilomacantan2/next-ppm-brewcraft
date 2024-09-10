@@ -76,7 +76,7 @@ export default function ContactPage() {
           <div className="flex justify-center">
             <Button
               type="submit"
-              className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-yellow-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-yellow-600/90 focus:outline-none focus:ring-2 md:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-yellow-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-yellow-600/90  md:w-auto active:outline-none focus:outline-none"
               onClick={onSubmit}
             >
               Send Message

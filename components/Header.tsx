@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { SideBar } from "./SideBar";
 import { CartSheet } from "./CartSheet";
 import Link from "next/link";
+import { ShoppingBag } from "lucide-react";
 
 export default function Header() {
   const pathname = usePathname();
@@ -58,8 +59,8 @@ export default function Header() {
 
   return (
     <header className="fixed left-0 top-0 z-50 flex w-full items-center justify-between px-5 py-4 md:px-12">
-      <Link href="/#home" className="text-foreground">
-        BrewCraft
+      <Link href="/#home" className="text-foreground text-yellow-500 flex justify-center items-center gap-2">
+        <ShoppingBag size={18} />BrewCraft
       </Link>
 
       <nav>

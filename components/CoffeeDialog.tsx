@@ -42,7 +42,7 @@ export default function DialogCard({
       <DialogTrigger asChild>{triggerComponent}</DialogTrigger>
       <DialogContent className="min-h-96 w-[95%] rounded-md sm:max-w-[60%]">
         <div className="relative flex flex-col gap-5 lg:flex-row">
-          <div className="w-full bg-white rounded-sm">
+          <div className="w-full rounded-sm bg-white">
             <div className="relative mx-auto h-48 w-48 flex-shrink-0 bg-white lg:h-72 lg:w-72">
               <Image
                 src={image}
@@ -56,10 +56,10 @@ export default function DialogCard({
 
           <div className="flex min-h-64 flex-col">
             <DialogHeader>
-              <DialogTitle className="text-left text-3xl font-medium">
+              <DialogTitle className="text-left text-lg md:text-2xl font-medium">
                 {brand}
               </DialogTitle>
-              <DialogDescription className="text-left text-base text-foreground/80">
+              <DialogDescription className="text-left text-sm text-foreground/80 md:text-lg">
                 {overview}
               </DialogDescription>
               {/* <StarRating rating={rating} /> */}

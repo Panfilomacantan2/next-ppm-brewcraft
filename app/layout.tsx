@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
-import { Jost } from "@next/font/google";
+import { Jost as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const fontSans = Jost({
+const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
